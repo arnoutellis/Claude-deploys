@@ -1,0 +1,17 @@
+{
+  "name": "ruthie-quotes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quote builder for Travels with Ruthie — bookings, holiday options and WhatsApp / email quotes.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@vercel/blob": "latest",
+    "next": "^15.5.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  }
+}
