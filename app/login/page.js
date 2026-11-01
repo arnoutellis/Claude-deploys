@@ -25,7 +25,7 @@ export default function LoginPage() {
           <p className="muted">This app still needs a little setup in Vercel:</p>
           <ul className="setup-list">
             <li className={status.password ? 'done' : ''}>
-              {status.password ? '✓' : '○'} Password (APP_PASSWORD and AUTH_SECRET)
+              {status.password ? '✓' : '○'} Password (APP_PASSWORD)
             </li>
             <li className={status.storage ? 'done' : ''}>
               {status.storage ? '✓' : '○'} Private Blob storage connected

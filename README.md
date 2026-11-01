@@ -24,7 +24,7 @@ A small web app for **Travels with Ruthie** to manage holiday requests and send 
 | Name | Purpose |
 | --- | --- |
 | `APP_PASSWORD` | The password Ruth uses to log in |
-| `AUTH_SECRET` | Random string used to sign the login cookie |
+| `AUTH_SECRET` | Optional. Random string used to sign the login cookie (falls back to the Blob token) |
 | `BLOB_READ_WRITE_TOKEN` | Added automatically when a **private** Blob store is connected to the Vercel project |
 
 Changing `APP_PASSWORD` or `AUTH_SECRET` logs everyone out.
