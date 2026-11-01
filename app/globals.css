@@ -110,6 +110,10 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--blue-2); ou
 .login-card .muted { margin-bottom: 20px; }
 .login-card .field { text-align: left; }
 .login-mark { width: 90px; height: 36px; margin-bottom: 8px; }
+.setup-list { list-style: none; padding: 0; margin: 0 0 14px; text-align: left; display: grid; gap: 8px; }
+.setup-list li { background: var(--pink-1); border-radius: 10px; padding: 10px 12px; font-weight: 600; font-size: 14px; }
+.setup-list li.done { background: #e2f4ea; color: #2f7a52; }
+.small-print { font-size: 13px; }
 
 /* ---------- Dashboard ---------- */
 .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin: 6px 0 18px; }

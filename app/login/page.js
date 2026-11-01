@@ -1,12 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mountains } from '@/components/Header';
 
 export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/status', { cache: 'no-store' })
+      .then((r) => r.json())
+      .then(setStatus)
+      .catch(() => {});
+  }, []);
+
+  if (status && (!status.password || !status.storage)) {
+    return (
+      <main className="login">
+        <div className="card login-card">
+          <Mountains className="login-mark" />
+          <h1 className="serif">Almost ready</h1>
+          <p className="muted">This app still needs a little setup in Vercel:</p>
+          <ul className="setup-list">
+            <li className={status.password ? 'done' : ''}>
+              {status.password ? '✓' : '○'} Password (APP_PASSWORD and AUTH_SECRET)
+            </li>
+            <li className={status.storage ? 'done' : ''}>
+              {status.storage ? '✓' : '○'} Private Blob storage connected
+            </li>
+          </ul>
+          <p className="muted small-print">After adding them, redeploy the project and refresh this page.</p>
+        </div>
+      </main>
+    );
+  }
 
   async function submit(e) {
     e.preventDefault();
